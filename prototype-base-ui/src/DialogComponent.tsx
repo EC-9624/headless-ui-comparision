@@ -1,4 +1,5 @@
 import { Dialog } from '@base-ui-components/react/dialog';
+import { Field } from '@base-ui-components/react/field';
 import './Dialog.css';
 
 export default function DialogComponent() {
@@ -24,30 +25,32 @@ export default function DialogComponent() {
                             Create your account to get started
                         </Dialog.Description>
 
-                        <div className="form-group">
-                            <label className="form-label" htmlFor="firstName">
+                        <Field.Root className="form-group">
+                            <Field.Label className="form-label">
                                 First Name
-                            </label>
-                            <input
+                            </Field.Label>
+                            <Field.Control
+                                render={<input />}
                                 id="firstName"
                                 name="firstName"
                                 className="form-input"
                                 required
                                 autoFocus
                             />
-                        </div>
+                        </Field.Root>
 
-                        <div className="form-group">
-                            <label className="form-label" htmlFor="lastName">
+                        <Field.Root className="form-group">
+                            <Field.Label className="form-label">
                                 Last Name
-                            </label>
-                            <input
+                            </Field.Label>
+                            <Field.Control
+                                render={<input />}
                                 id="lastName"
                                 name="lastName"
                                 className="form-input"
                                 required
                             />
-                        </div>
+                        </Field.Root>
 
                         <div className="dialog-actions">
                             <Dialog.Close className="button-secondary">
