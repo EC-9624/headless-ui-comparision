@@ -1,4 +1,4 @@
-import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
+import { Dialog, DialogPanel, DialogTitle, Fieldset, Field, Label, Input } from '@headlessui/react'
 import { useState } from 'react'
 import './Dialog.css'
 
@@ -26,30 +26,26 @@ function DialogComponent() {
                                 Sign up
                             </DialogTitle>
 
-                            <div className="form-group">
-                                <label className="form-label" htmlFor="firstName">
-                                    First Name
-                                </label>
-                                <input
-                                    id="firstName"
-                                    name="firstName"
-                                    className="form-input"
-                                    required
-                                    autoFocus
-                                />
-                            </div>
+                            <Fieldset>
+                                <Field className="form-group">
+                                    <Label className="form-label">First Name</Label>
+                                    <Input
+                                        name="firstName"
+                                        className="form-input"
+                                        required
+                                        autoFocus
+                                    />
+                                </Field>
 
-                            <div className="form-group">
-                                <label className="form-label" htmlFor="lastName">
-                                    Last Name
-                                </label>
-                                <input
-                                    id="lastName"
-                                    name="lastName"
-                                    className="form-input"
-                                    required
-                                />
-                            </div>
+                                <Field className="form-group">
+                                    <Label className="form-label">Last Name</Label>
+                                    <Input
+                                        name="lastName"
+                                        className="form-input"
+                                        required
+                                    />
+                                </Field>
+                            </Fieldset>
 
                             <div className="dialog-actions">
                                 <button

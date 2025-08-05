@@ -83,19 +83,39 @@ form {
   gap: 16px;
 }
 
+/* Headless UI Fieldset styling */
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
-.form-label {
+/* Apply styling to both class-based and Headless UI Field components */
+.form-group,
+fieldset > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label,
+fieldset label {
   font-weight: 500;
   color: #374151;
   font-size: 14px;
 }
 
-.form-input {
+.form-input,
+fieldset input {
   padding: 10px 12px;
   border: 1px solid #d1d5db;
   border-radius: 6px;
@@ -103,17 +123,20 @@ form {
   transition: all 150ms ease;
 }
 
-.form-input:focus {
+.form-input:focus,
+fieldset input:focus {
   outline: none;
   border-color: #3b82f6;
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
-.form-input:invalid {
+.form-input:invalid,
+fieldset input:invalid {
   border-color: #ef4444;
 }
 
-.form-input:invalid:focus {
+.form-input:invalid:focus,
+fieldset input:invalid:focus {
   border-color: #ef4444;
   box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
 }
