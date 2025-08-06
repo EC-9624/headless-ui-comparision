@@ -1,0 +1,221 @@
+/* Dialog.css - React Aria Components styling */
+
+/* Trigger button */
+.modal-trigger {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.modal-trigger:hover {
+  background: #1d4ed8;
+}
+
+.modal-trigger:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Modal overlay */
+.react-aria-Modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 16px;
+}
+
+.react-aria-Modal[data-entering] {
+  animation: modal-fade-in 200ms ease-out;
+}
+
+.react-aria-Modal[data-exiting] {
+  animation: modal-fade-out 200ms ease-in;
+}
+
+/* Dialog content */
+.react-aria-Dialog {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  outline: none;
+}
+
+.react-aria-Dialog[data-entering] {
+  animation: dialog-slide-in 200ms ease-out;
+}
+
+.react-aria-Dialog[data-exiting] {
+  animation: dialog-slide-out 200ms ease-in;
+}
+
+/* Dialog heading */
+.react-aria-Dialog [slot="title"] {
+  margin: 0 0 20px 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Form styling */
+.react-aria-Dialog form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* TextField container */
+.react-aria-TextField {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Labels */
+.react-aria-Label {
+  font-weight: 500;
+  color: #374151;
+  font-size: 14px;
+}
+
+/* Inputs */
+.react-aria-Input {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 150ms ease;
+  outline: none;
+}
+
+.react-aria-Input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.react-aria-Input[data-invalid] {
+  border-color: #ef4444;
+}
+
+.react-aria-Input[data-invalid]:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Add some spacing for buttons if you add them */
+.dialog-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #f3f4f6;
+}
+
+.button-secondary {
+  background: white;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.button-primary {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.button-secondary:hover {
+  background: #f9fafb;
+}
+
+.button-primary:hover {
+  background: #1d4ed8;
+}
+
+.button-secondary:focus-visible,
+.button-primary:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Animations */
+@keyframes modal-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes dialog-slide-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes dialog-slide-out {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.96) translateY(-10px);
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 640px) {
+  .react-aria-Dialog {
+    width: 95%;
+    padding: 20px;
+    margin: 0;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .react-aria-Modal[data-entering],
+  .react-aria-Modal[data-exiting],
+  .react-aria-Dialog[data-entering],
+  .react-aria-Dialog[data-exiting] {
+    animation: none;
+  }
+}
