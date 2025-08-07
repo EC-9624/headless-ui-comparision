@@ -21,9 +21,9 @@ export default function BaseUIDialog() {
                         <Dialog.Title className="base-title">
                             Sign up
                         </Dialog.Title>
-                        <Dialog.Description className="base-description">
+                        {/* <Dialog.Description className="base-description">
                             Create your account to get started
-                        </Dialog.Description>
+                        </Dialog.Description> */}
 
                         <Field.Root className="form-group">
                             <Field.Label className="form-label">

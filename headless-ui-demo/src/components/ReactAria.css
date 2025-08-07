@@ -47,7 +47,7 @@
   background: white;
   border-radius: 8px;
   padding: 24px;
-  width: 90%;
+  width: 90vw;
   max-width: 400px;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -162,6 +162,21 @@
   outline-offset: 2px;
 }
 
+/* Close button (X) */
+.dialog-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #6b7280;
+  line-height: 1;
+}
+
 /* Animations */
 @keyframes modal-fade-in {
   from {
@@ -206,7 +221,7 @@
 /* Mobile responsive */
 @media (max-width: 640px) {
   .react-aria-Dialog {
-    width: 95%;
+    width: 95vw;
     padding: 20px;
     margin: 0;
   }
