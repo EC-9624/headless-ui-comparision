@@ -60,6 +60,9 @@ export default function HeadlessUIDialog() {
                                 </button>
                             </div>
                         </form>
+                        <button className="dialog-close" aria-label="Close" onClick={() => setIsOpen(false)}>
+                            x
+                        </button>
                     </DialogPanel>
                 </div>
             </Dialog>

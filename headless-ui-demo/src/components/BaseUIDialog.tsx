@@ -61,6 +61,9 @@ export default function BaseUIDialog() {
                             </button>
                         </div>
                     </form>
+                    <Dialog.Close className="dialog-close" aria-label="Close">
+                        ×
+                    </Dialog.Close >
                 </Dialog.Popup>
             </Dialog.Portal>
         </Dialog.Root>
