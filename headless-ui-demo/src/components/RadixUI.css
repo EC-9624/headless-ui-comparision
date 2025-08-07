@@ -135,15 +135,6 @@ form {
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
-.form-input:invalid {
-  border-color: #ef4444;
-}
-
-.form-input:invalid:focus {
-  border-color: #ef4444;
-  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
-}
-
 /* Dialog actions */
 .dialog-actions {
   display: flex;
