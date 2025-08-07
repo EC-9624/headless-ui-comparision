@@ -1,4 +1,4 @@
-import { Dialog, DialogPanel, DialogTitle, Fieldset, Field, Label, Input } from '@headlessui/react'
+import { Dialog, DialogPanel, DialogTitle, Fieldset, Field, Label, Input, CloseButton } from '@headlessui/react'
 import { useState } from 'react'
 import './HeadlessUI.css'
 
@@ -48,21 +48,17 @@ export default function HeadlessUIDialog() {
                             </Fieldset>
 
                             <div className="dialog-actions">
-                                <button
-                                    type="button"
-                                    className="button-secondary"
-                                    onClick={() => setIsOpen(false)}
-                                >
+                                <CloseButton className="button-secondary">
                                     Cancel
-                                </button>
+                                </CloseButton>
                                 <button type="submit" className="button-primary">
                                     Sign Up
                                 </button>
                             </div>
                         </form>
-                        <button className="dialog-close" aria-label="Close" onClick={() => setIsOpen(false)}>
-                            x
-                        </button>
+                        <CloseButton className="dialog-close" aria-label="Close">
+                            ×
+                        </CloseButton>
                     </DialogPanel>
                 </div>
             </Dialog>

@@ -280,20 +280,20 @@ fieldset input:focus {
   outline-offset: 2px;
 }
 
-/* Headless UI animations (using data attributes) */
-.headless-dialog[data-open] .headless-backdrop {
+/* Headless UI animations - target elements directly */
+.headless-backdrop[data-open] {
   animation: backdrop-show 200ms ease-out;
 }
 
-.headless-dialog[data-closed] .headless-backdrop {
+.headless-backdrop[data-closed] {
   animation: backdrop-hide 200ms ease-in;
 }
 
-.headless-dialog[data-open] .headless-panel {
+.headless-panel[data-open] {
   animation: panel-show 200ms ease-out;
 }
 
-.headless-dialog[data-closed] .headless-panel {
+.headless-panel[data-closed] {
   animation: panel-hide 200ms ease-in;
 }
 
@@ -340,10 +340,10 @@ fieldset input:focus {
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .headless-dialog[data-open] .headless-backdrop,
-  .headless-dialog[data-closed] .headless-backdrop,
-  .headless-dialog[data-open] .headless-panel,
-  .headless-dialog[data-closed] .headless-panel {
+  .headless-backdrop[data-open],
+  .headless-backdrop[data-closed],
+  .headless-panel[data-open],
+  .headless-panel[data-closed] {
     animation: none;
   }
 
