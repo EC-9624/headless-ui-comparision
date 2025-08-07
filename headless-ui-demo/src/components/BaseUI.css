@@ -30,11 +30,11 @@
   z-index: 50;
 }
 
-.base-backdrop[data-state="open"] {
+.base-backdrop[data-open] {
   animation: backdrop-show 200ms ease-out;
 }
 
-.base-backdrop[data-state="closed"] {
+.base-backdrop[data-closed] {
   animation: backdrop-hide 200ms ease-in;
 }
 
@@ -59,11 +59,11 @@
   outline: none;
 }
 
-.base-popup[data-state="open"] {
+.base-popup[data-open] {
   animation: popup-show 200ms ease-out;
 }
 
-.base-popup[data-state="closed"] {
+.base-popup[data-closed] {
   animation: popup-hide 200ms ease-in;
 }
 
@@ -107,6 +107,8 @@ form {
   border: 1px solid #d1d5db;
   border-radius: 6px;
   font-size: 14px;
+  background: white;
+  color: #000;
   transition: all 150ms ease;
 }
 
@@ -232,10 +234,10 @@ form {
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .base-backdrop[data-state="open"],
-  .base-backdrop[data-state="closed"],
-  .base-popup[data-state="open"],
-  .base-popup[data-state="closed"] {
+  .base-backdrop[data-open],
+  .base-backdrop[data-closed],
+  .base-popup[data-open],
+  .base-popup[data-closed] {
     animation: none;
   }
 

@@ -124,6 +124,8 @@ form {
   border: 1px solid #d1d5db;
   border-radius: 6px;
   font-size: 14px;
+  background: white;
+  color: #000;
   transition: all 150ms ease;
 }
 
