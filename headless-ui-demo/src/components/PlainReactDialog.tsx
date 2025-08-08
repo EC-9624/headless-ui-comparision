@@ -8,14 +8,7 @@ export default function PlainReactDialog() {
 
     useEffect(() => {
         if (isOpen) {
-            document.body.style.overflow = 'hidden'
             firstInputRef.current?.focus()
-        } else {
-            document.body.style.overflow = 'unset'
-        }
-
-        return () => {
-            document.body.style.overflow = 'unset'
         }
     }, [isOpen])
 
@@ -55,7 +48,7 @@ export default function PlainReactDialog() {
             <button className="modal-trigger" onClick={() => setIsOpen(true)}>
                 Open Modal (Plain React)
             </button>
-            
+
             {isOpen && (
                 <div className="plain-dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
                     <div className="plain-backdrop" />
@@ -102,8 +95,8 @@ export default function PlainReactDialog() {
                                     </button>
                                 </div>
                             </form>
-                            <button 
-                                className="dialog-close" 
+                            <button
+                                className="dialog-close"
                                 aria-label="Close"
                                 onClick={() => setIsOpen(false)}
                             >
