@@ -3,6 +3,7 @@ import './PlainReact.css'
 
 export default function PlainReactDialog() {
     const [isOpen, setIsOpen] = useState(false)
+    const [isClosing, setIsClosing] = useState(false)
     const dialogRef = useRef<HTMLDivElement>(null)
     const firstInputRef = useRef<HTMLInputElement>(null)
 
@@ -15,13 +16,13 @@ export default function PlainReactDialog() {
     useEffect(() => {
         const handleEscape = (e: KeyboardEvent) => {
             if (e.key === 'Escape' && isOpen) {
-                setIsOpen(false)
+                closeModal()
             }
         }
 
         const handleClickOutside = (e: MouseEvent) => {
             if (dialogRef.current && !dialogRef.current.contains(e.target as Node)) {
-                setIsOpen(false)
+                closeModal()
             }
         }
 
@@ -36,11 +37,19 @@ export default function PlainReactDialog() {
         }
     }, [isOpen])
 
+    const closeModal = () => {
+        setIsClosing(true)
+        setTimeout(() => {
+            setIsOpen(false)
+            setIsClosing(false)
+        }, 200)
+    }
+
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         const formData = new FormData(e.currentTarget)
         console.log('Plain React Form data:', Object.fromEntries(formData))
-        setIsOpen(false)
+        closeModal()
     }
 
     return (
@@ -50,10 +59,10 @@ export default function PlainReactDialog() {
             </button>
 
             {isOpen && (
-                <div className="plain-dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
-                    <div className="plain-backdrop" />
+                <div className={`plain-dialog ${isClosing ? 'closing' : ''}`} role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+                    <div className={`plain-backdrop ${isClosing ? 'closing' : ''}`} />
                     <div className="plain-container">
-                        <div className="plain-panel" ref={dialogRef}>
+                        <div className={`plain-panel ${isClosing ? 'closing' : ''}`} ref={dialogRef}>
                             <form onSubmit={handleSubmit}>
                                 <h2 className="plain-title" id="dialog-title">
                                     Sign up
@@ -87,7 +96,7 @@ export default function PlainReactDialog() {
                                 </div>
 
                                 <div className="dialog-actions">
-                                    <button type="button" className="button-secondary" onClick={() => setIsOpen(false)}>
+                                    <button type="button" className="button-secondary" onClick={closeModal}>
                                         Cancel
                                     </button>
                                     <button type="submit" className="button-primary">
@@ -98,7 +107,7 @@ export default function PlainReactDialog() {
                             <button
                                 className="dialog-close"
                                 aria-label="Close"
-                                onClick={() => setIsOpen(false)}
+                                onClick={closeModal}
                             >
                                 ×
                             </button>

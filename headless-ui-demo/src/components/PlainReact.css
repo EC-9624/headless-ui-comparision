@@ -15,6 +15,10 @@
   animation: backdrop-show 200ms ease-out;
 }
 
+.plain-backdrop.closing {
+  animation: backdrop-hide 200ms ease-out;
+}
+
 /* Container for centering */
 .plain-container {
   position: fixed;
@@ -36,6 +40,10 @@
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
   position: relative;
   animation: panel-show 200ms ease-out;
+}
+
+.plain-panel.closing {
+  animation: panel-hide 200ms ease-out;
 }
 
 .plain-panel:focus {
@@ -185,6 +193,26 @@ form {
   }
 }
 
+@keyframes backdrop-hide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes panel-hide {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.96) translateY(-10px);
+  }
+}
+
 /* Mobile responsive */
 @media (max-width: 640px) {
   .plain-panel {
@@ -204,7 +232,9 @@ form {
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .plain-backdrop,
-  .plain-panel {
+  .plain-panel,
+  .plain-backdrop.closing,
+  .plain-panel.closing {
     animation: none;
   }
 
