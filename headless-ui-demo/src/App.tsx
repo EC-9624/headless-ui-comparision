@@ -43,7 +43,7 @@ function App() {
 
         <section className="library-section">
           <h2>Plain React</h2>
-          <p>React api's no components </p>
+          <p>React api's no components library</p>
           <PlainReactDialog />
         </section>
       </main>
