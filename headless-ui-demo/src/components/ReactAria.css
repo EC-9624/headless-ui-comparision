@@ -108,14 +108,14 @@
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
-.react-aria-Input[data-invalid] {
+/* .react-aria-Input[data-invalid] {
   border-color: #ef4444;
 }
 
 .react-aria-Input[data-invalid]:focus {
   border-color: #ef4444;
   box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
-}
+} */
 
 /* Add some spacing for buttons if you add them */
 .dialog-actions {
