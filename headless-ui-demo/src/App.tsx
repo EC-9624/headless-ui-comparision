@@ -2,6 +2,7 @@ import BaseUIDialog from './components/BaseUIDialog'
 import HeadlessUIDialog from './components/HeadlessUIDialog'
 import RadixDialog from './components/RadixDialog'
 import ReactAriaDialog from './components/ReactAriaDialog'
+import PlainReactDialog from './components/PlainReactDialog'
 import './App.css'
 
 function App() {
@@ -38,6 +39,12 @@ function App() {
           <h2>React Aria</h2>
           <p>Adobe's accessible React components</p>
           <ReactAriaDialog />
+        </section>
+
+        <section className="library-section">
+          <h2>Plain React</h2>
+          <p>React api's no components </p>
+          <PlainReactDialog />
         </section>
       </main>
 
